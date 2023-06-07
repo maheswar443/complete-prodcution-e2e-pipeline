@@ -13,8 +13,7 @@ pipeline{
                 cleanWs()
             }
         }
-    }
-    stages{
+    
         stage("Checkout from SCM"){
             steps {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/maheswar443/complete-prodcution-e2e-pipeline.git'
