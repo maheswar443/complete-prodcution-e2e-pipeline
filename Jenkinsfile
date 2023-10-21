@@ -18,6 +18,17 @@ pipeline{
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/maheswar443/complete-prodcution-e2e-pipeline.git'
             }
         }
+        stage("Build Application"){
+            steps {
+                sh "mvn clean package"
+            }
+        }
+
+        stage("Test Application"){
+            steps {
+                sh "mvn test"
+            }
+        }
      }
     
 
